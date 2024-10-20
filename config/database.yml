@@ -19,7 +19,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: work
-  database: <%= ENV["DATABASE_PASSWORD"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
@@ -81,7 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: postgres://work:Godofwar.1@localhost/test_database_production
   database: test_database_production
   username: test_database
   password: <%= ENV["TEST_DATABASE_DATABASE_PASSWORD"] %>
